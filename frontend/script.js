@@ -116,6 +116,13 @@ function setup() {
         }),
         socket.on("update", function (a) {
             (window.usersPublic[a.guid] = a.userPublic), usersUpdate(), BonziHandler.bonzisCheck();
+            var bonzi = bonzis[a.guid];
+            if (bonzi && a.userPublic.speed !== undefined) {
+                bonzi.userPublic.speed = a.userPublic.speed;
+            }
+            if (bonzi && a.userPublic.pitch !== undefined) {
+                bonzi.userPublic.pitch = a.userPublic.pitch;
+            }
         }),
         socket.on("talk", function (a) {
             var b = bonzis[a.guid];
@@ -160,6 +167,20 @@ function setup() {
         socket.on("alert", function (data) {
             alert(data.text);
         }),
+        socket.on("image", function (a) {
+            var b = bonzis[a.guid];
+            if (b) {
+                b.cancel();
+                b.image(a.url);
+            }
+        }),
+        socket.on("video", function (a) {
+            var b = bonzis[a.guid];
+            if (b) {
+                b.cancel();
+                b.video(a.url);
+            }
+        }),
         socket.on("leave", function (a) {
             var b = bonzis[a.guid];
             "undefined" != typeof b &&
@@ -180,7 +201,48 @@ function sendInput() {
         if (b) return void socket.emit("command", { list: ["youtube", b] });
         if ("/" == a.substring(1, 0)) {
             var c = a.substring(1).split(" ");
-            if (c[0].toLowerCase() === "bye") {
+            var command = c[0].toLowerCase();
+            
+            // Handle commands with multi-word arguments
+            if (command === "name") {
+                var name = c.slice(1).join(" ");
+                if (name) {
+                    socket.emit("command", { list: ["name", name] });
+                }
+            } else if (command === "speed") {
+                var speed = parseInt(c[1]);
+                if (!isNaN(speed) && speed >= 125 && speed <= 275) {
+                    socket.emit("command", { list: ["speed", speed] });
+                } else {
+                    alert("Speed must be between 125 and 275.");
+                }
+            } else if (command === "pitch") {
+                var pitch = parseInt(c[1]);
+                if (!isNaN(pitch) && pitch >= 15 && pitch <= 125) {
+                    socket.emit("command", { list: ["pitch", pitch] });
+                } else {
+                    alert("Pitch must be between 15 and 125.");
+                }
+            } else if (command === "color") {
+                if (c.length > 1) {
+                    socket.emit("command", { list: ["color", c[1]] });
+                } else {
+                    // Random color
+                    var colors = ["black", "blue", "brown", "green", "purple", "red", "pink"];
+                    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    socket.emit("command", { list: ["color", randomColor] });
+                }
+            } else if (command === "image") {
+                var imageUrl = c.slice(1).join(" ");
+                if (imageUrl) {
+                    socket.emit("command", { list: ["image", imageUrl] });
+                }
+            } else if (command === "video") {
+                var videoUrl = c.slice(1).join(" ");
+                if (videoUrl) {
+                    socket.emit("command", { list: ["video", videoUrl] });
+                }
+            } else if (command === "bye") {
                 socket.emit("command", { list: ["bye"] });
             } else {
                 socket.emit("command", { list: c });
@@ -546,6 +608,33 @@ var _createClass = (function () {
                                     ' type="text/html" width="173" height="173" \n\t\t\t\t\tsrc="https://www.youtube.com/embed/' +
                                     a +
                                     '?autoplay=1" \n\t\t\t\t\tstyle="width:173px;height:173px"\n\t\t\t\t\tframeborder="0"\n\t\t\t\t\tallowfullscreen="allowfullscreen"\n\t\t\t\t\tmozallowfullscreen="mozallowfullscreen"\n\t\t\t\t\tmsallowfullscreen="msallowfullscreen"\n\t\t\t\t\toallowfullscreen="oallowfullscreen"\n\t\t\t\t\twebkitallowfullscreen="webkitallowfullscreen"\n\t\t\t\t\t></' +
+                                    b +
+                                    ">\n\t\t\t\t"
+                            ),
+                                this.$dialog.show();
+                        }
+                    },
+                },
+                {
+                    key: "image",
+                    value: function (a) {
+                        if (!this.mute) {
+                            this.$dialogCont.html('<img src="' + a + '" style="max-width:173px;max-height:173px;"/>'),
+                                this.$dialog.show();
+                        }
+                    },
+                },
+                {
+                    key: "video",
+                    value: function (a) {
+                        if (!this.mute) {
+                            var b = "iframe";
+                            this.$dialogCont.html(
+                                "\n\t\t\t\t\t<" +
+                                    b +
+                                    ' type="text/html" width="173" height="173" \n\t\t\t\t\tsrc="' +
+                                    a +
+                                    '" \n\t\t\t\t\tstyle="width:173px;height:173px"\n\t\t\t\t\tframeborder="0"\n\t\t\t\t\tallowfullscreen="allowfullscreen"\n\t\t\t\t\tmozallowfullscreen="mozallowfullscreen"\n\t\t\t\t\tmsallowfullscreen="msallowfullscreen"\n\t\t\t\t\toallowfullscreen="oallowfullscreen"\n\t\t\t\t\twebkitallowfullscreen="webkitallowfullscreen"\n\t\t\t\t\t></' +
                                     b +
                                     ">\n\t\t\t\t"
                             ),

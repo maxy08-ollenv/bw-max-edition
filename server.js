@@ -104,6 +104,22 @@ function checkBan(ip) {
     return ban || null;
 }
 
+// Function to get random speed (125-275)
+function getRandomSpeed() {
+    return Math.floor(Math.random() * (275 - 125 + 1)) + 125;
+}
+
+// Function to get random pitch (15-125)
+function getRandomPitch() {
+    return Math.floor(Math.random() * (125 - 15 + 1)) + 15;
+}
+
+// Function to get random color
+function getRandomColor() {
+    const colors = ['black', 'blue', 'brown', 'green', 'purple', 'red', 'pink'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
   
@@ -167,10 +183,10 @@ io.on('connection', (socket) => {
 
     const userPublic = {
       name: name,
-      color: 'purple', // Default color
+      color: getRandomColor(),
       guid: guid,
-      speed: 175,
-      pitch: 50,
+      speed: getRandomSpeed(),
+      pitch: getRandomPitch(),
       voice: 'en-us'
     };
 
@@ -401,6 +417,34 @@ io.on('connection', (socket) => {
 
             console.log('Ban executed successfully');
           }
+        }
+        break;
+      case 'speed':
+        if (args[0]) {
+          const speed = parseInt(args[0]);
+          if (!isNaN(speed) && speed >= 125 && speed <= 275) {
+            userPublic.speed = speed;
+            io.to(room).emit('update', { guid, userPublic });
+          }
+        }
+        break;
+      case 'pitch':
+        if (args[0]) {
+          const pitch = parseInt(args[0]);
+          if (!isNaN(pitch) && pitch >= 15 && pitch <= 125) {
+            userPublic.pitch = pitch;
+            io.to(room).emit('update', { guid, userPublic });
+          }
+        }
+        break;
+      case 'image':
+        if (args[0]) {
+          io.to(room).emit('image', { guid, url: args[0] });
+        }
+        break;
+      case 'video':
+        if (args[0]) {
+          io.to(room).emit('video', { guid, url: args[0] });
         }
         break;
       // For now we're just gonna end this command list here
