@@ -343,6 +343,12 @@ body.vaporwave #chat_send {
 #btn_tile {
   background-image: url("../img/desktop/tile.png"); }
 
+#logo_login{
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
 #blur{
     top: 90px;
     position: absolute;
@@ -518,6 +524,13 @@ body.vaporwave #chat_send {
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat; }
+
+   #logo_login{
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-22.7%, -86%);
+    }
 
   #login_card {
     background-image: url("../img/logon/card.mobile.png");
