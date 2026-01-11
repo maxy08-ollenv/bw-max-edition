@@ -336,10 +336,19 @@ body.vaporwave #chat_send {
 #btn_tile {
   background-image: url("../img/desktop/tile.png"); }
 
+#blur{
+    top: 100px;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    z-index: -543558;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%);
+}
+
 #page_login {
   background-color: #8b5adc;
-  background-image: url("../img/logon/logo.png"), url("../img/logon/top.png"), url("../img/logon/bottom.png"), url("../img/logon/topleft.png"), url("../img/logon/divider.png");
-  background-position: center, top, bottom, top left, center;
+  background-image: url("../img/logon/logo.png"), url("../img/logon/top.png"), url("../img/logon/bottom.png"), url("../img/logon/divider.png");
+  background-position: center, top, bottom, center;
   background-size: auto, 100% 100px, 100% 122px, auto, 1px 100%;
   background-repeat: no-repeat; }
 
