@@ -348,6 +348,7 @@ body.vaporwave #chat_send {
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(0px 0px 10px #00000094);
 }
 #blur{
     top: 90px;
