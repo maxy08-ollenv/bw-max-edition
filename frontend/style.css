@@ -412,7 +412,7 @@ body.vaporwave #chat_send {
   flex-wrap: wrap; }
 
 #login_card {
-  background-image: url("../img/logon/card.png");
+  background-image: url("../img/logon/cardlonghorn.png");
   width: 353px;
   height: 70px;
   position: absolute;
@@ -523,7 +523,7 @@ body.vaporwave #chat_send {
     }
 
   #login_card {
-    background-image: url("../img/logon/card.mobile.png");
+    background-image: url("../img/logon/card.mobile.longhorn.png");
     width: 223px;
     height: 70px;
     margin-left: -112px;
