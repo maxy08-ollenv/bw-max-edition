@@ -491,9 +491,9 @@ body.vaporwave #chat_send {
     display: none; } }
 @media screen and (max-width: 560px) {
   #page_login {
-    background-image: url("../img/logon/logo.mobile.png"), url("../img/logon/topleft.png");
-    background-position: center, 0 -100px;
-    background-size: auto, auto;
+    background-image: url("../img/logon/logo.mobile.png");
+    background-position: center;
+    background-size: auto;
     background-repeat: no-repeat; }
 
   #blur {
