@@ -341,14 +341,22 @@ body.vaporwave #chat_send {
     position: absolute;
     width: 5395549px;
     height: 421px;
-    z-index: -543558;
-    background: linear-gradient(180deg, transparent, white, transparent 70%, transparent, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
+    z-index: -5695649569;
+    background: linear-gradient(180deg, transparent, white 20%, transparent 70%, transparent, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
+}
+#blur2{
+    bottom: 0px;
+    position: absolute;
+    width: 5395549px;
+    height: 350px;
+    z-index: -5695649569;
+    background: linear-gradient(180deg, transparent, #1f202a33, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
 }
 
 #top_bar, #bottom_bar{
     width: 100%;
     background-color: #37009C;
-    z-index: -54545953;
+    z-index: -54545953555;
 }
 #top_bar{
     height: 100px;
