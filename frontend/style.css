@@ -337,19 +337,19 @@ body.vaporwave #chat_send {
   background-image: url("../img/desktop/tile.png"); }
 
 #blur{
-    top: 100px;
+    top: 90px;
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 5395549px;
+    height: 421px;
     z-index: -543558;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%);
+    background: linear-gradient(180deg, transparent, white, transparent 70%, transparent, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
 }
 
 #page_login {
-  background-color: #8b5adc;
-  background-image: url("../img/logon/logo.png"), url("../img/logon/top.png"), url("../img/logon/bottom.png"), url("../img/logon/divider.png");
-  background-position: center, top, bottom, center;
-  background-size: auto, 100% 100px, 100% 122px, 1px 100%;
+  background-color: #c9c5d0;
+  background-image: url("../img/logon/logo.png");
+  background-position: center;
+  background-size: auto;
   background-repeat: no-repeat; }
 
 #login_apps {
