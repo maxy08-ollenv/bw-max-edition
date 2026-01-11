@@ -370,7 +370,7 @@ body.vaporwave #chat_send {
 
 #top_bar, #bottom_bar{
     width: 100%;
-    background: linear-gradient(180deg, #334163, #3F4D75); /* #37009C; */ 
+    background: linear-gradient(180deg, #563363, #683F75); /* #37009C; */ 
     z-index: -54545953555;
 }
 #top_bar{
@@ -388,7 +388,7 @@ body.vaporwave #chat_send {
     bottom: 0px;
     position: absolute;
     height: 122px;
-    background: linear-gradient(0deg, #334163, #3F4D75); /* linear-gradient(to right, #8934AE, #37009C); */
+    background: linear-gradient(0deg, #563363, #683F75); /* linear-gradient(to right, #8934AE, #37009C); */
 }
 #bottom_bar div{
     width: 100%;
