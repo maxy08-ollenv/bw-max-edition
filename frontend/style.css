@@ -431,7 +431,8 @@ body.vaporwave #chat_send {
   padding: 8px; }
 
 #login_readme {
-  color: #444;
+  color: #cecece;
+  background: black;
   padding: 12px;
   bottom: 24%;
   width: auto;
