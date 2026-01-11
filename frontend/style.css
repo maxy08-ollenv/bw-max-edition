@@ -685,5 +685,6 @@ body.vaporwave #chat_send {
 
 #page_warning {
   display: block !important;
+  text-align: center;
   z-index: 45935345945;
 }
