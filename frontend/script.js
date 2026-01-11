@@ -1072,8 +1072,7 @@ var undefined,
     debug = !0;
 window.admin = false;
 $(function () {
-    $("#login_room").val(window.location.hash.slice(1)),
-    $("#login_name, #login_room").keypress(function (a) {
+    $("#login_go").off("click").on("click", function() {
         login();
     });
     $("#login_room").val(window.location.hash.slice(1)),
