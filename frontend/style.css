@@ -358,7 +358,7 @@ body.vaporwave #chat_send {
     width: 5395549px;
     height: 350px;
     z-index: -5695649569;
-    background: linear-gradient(180deg, transparent, #1f202a33, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
+    background: linear-gradient(180deg, transparent, #272b5630 40%, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
 }
 
 #top_bar, #bottom_bar{
@@ -390,7 +390,7 @@ body.vaporwave #chat_send {
 }
 
 #page_login {
-  background-color: #c9c5d0;
+  background-color: #c4b7d9;
   background-image: url("../img/logon/logo.png");
   background-position: center;
   background-size: auto;
