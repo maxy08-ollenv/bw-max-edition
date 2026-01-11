@@ -360,6 +360,14 @@ body.vaporwave #chat_send {
     z-index: -5695649569;
     background: linear-gradient(180deg, transparent, #272b561f 40%, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
 }
+#blur3{
+    top: 76px;
+    position: absolute;
+    width: 5395549px;
+    height: 421px;
+    z-index: -5695649569;
+    background: linear-gradient(180deg, transparent, #ffffffcf, transparent 10%); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
+}
 
 #top_bar, #bottom_bar{
     width: 100%;
