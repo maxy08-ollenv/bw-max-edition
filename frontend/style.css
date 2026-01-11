@@ -403,11 +403,7 @@ body.vaporwave #chat_send {
 }
 
 #page_login {
-  background-color: #cbb7d9;
-  background-image: url("../img/logon/logo.png");
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat; }
+  background-color: #cbb7d9; }
 
 #login_apps {
   display: flex;
@@ -519,13 +515,7 @@ body.vaporwave #chat_send {
   #login_readme {
     display: none; } }
 @media screen and (max-width: 560px) {
-  #page_login {
-    background-image: url("../img/logon/logo.mobile.png");
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat; }
-
-   #logo_login{
+  #logo_login{
     top:50%;
     left: 50%;
     position: absolute;
