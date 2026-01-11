@@ -520,10 +520,6 @@ body.vaporwave #chat_send {
     background-size: auto;
     background-repeat: no-repeat; }
 
-  #blur {
-    top: 0px;
-  }
-
   #login_card {
     background-image: url("../img/logon/card.mobile.png");
     width: 223px;
