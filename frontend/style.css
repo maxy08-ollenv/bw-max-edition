@@ -4,6 +4,14 @@ body, html {
   height: 100%;
   overflow: hidden; }
 
+#und {
+  top: 50%;
+  left: 50%;
+  margin: -130px ;
+  position: absolute;
+  color: white;
+  font-size: 30px;
+}
 .page {
   position: absolute;
   width: 100%;
