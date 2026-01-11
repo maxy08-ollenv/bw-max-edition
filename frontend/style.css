@@ -356,11 +356,13 @@ body.vaporwave #chat_send {
     position: absolute;
     width: 100%;
     height: 3px;
-    bottom:0px;
+    top: 50px;
+    margin-top: 47px;
     background: linear-gradient(to right, #340399, rgba(255, 255, 255, 0.85) 25%, rgba(0,0,0,0));
 }
 #bottom_bar{
     bottom: 0px;
+    position: absolute;
     height: 122px;
     background: linear-gradient(to right, #8934AE, #37009C);
 }
